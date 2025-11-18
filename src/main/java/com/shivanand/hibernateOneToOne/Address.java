@@ -1,11 +1,28 @@
 package com.shivanand.hibernateOneToOne;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "addres")
 public class Address {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int  addrId;
+	@Column
 	private String street;
+	@Column
 	private String city;
+	@Column
 	private String state;
+	@Column
 	private int pincode;
+	
 	
 	public Address() {
 		//defaultconstructor 
@@ -70,8 +87,8 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [addrId=" + addrId + ", street=" + street + ", city=" + city + ", state=" + state + ", pincode="
-				+ pincode + "]";
+		return "Address (addrId=" + addrId + ", street=" + street + ", city=" + city + ", state=" + state + ", pincode="
+				+ pincode + ")";
 	}
 	
 	
